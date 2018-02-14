@@ -13,6 +13,11 @@ public class Address {
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
 
     public final String value;
+    public final Block block;
+    public final Street street;
+    public final Unit unit;
+    public final PostalCode postalCode;
+
     private boolean isPrivate;
 
     /**
@@ -27,6 +32,11 @@ public class Address {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
         this.value = trimmedAddress;
+        String[] addressParts = trimmedAddress.split(", ");
+        block = new Block(addressParts[0],isPrivate);
+        street = new Street(addressParts[1], isPrivate);
+        unit = new Unit(addressParts[2], isPrivate);
+        postalCode = new PostalCode(addressParts[3],isPrivate);
     }
 
     /**
