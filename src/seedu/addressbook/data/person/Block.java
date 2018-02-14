@@ -1,6 +1,5 @@
 package seedu.addressbook.data.person;
 
-import seedu.addressbook.data.exception.IllegalValueException;
 
 /**
  * Represents a Person's Blocks in the address book.s
@@ -8,13 +7,10 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Block {
 
     public static final String EXAMPLE = "123";
-    public static final String MESSAGE_BLOCK_CONSTRAINTS = "Person addresses can be in any format";
-    public static final String ADDRESS_VALIDATION_REGEX = ".+";
-
     public final String value;
     private boolean isPrivate;
 
-    public Block(String block, boolean isPrivate) throws IllegalValueException {
+    public Block(String block, boolean isPrivate){
         this.isPrivate = isPrivate;
         this.value = block.trim();
     }
@@ -27,8 +23,8 @@ public class Block {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Street // instanceof handles nulls
-                && this.value.equals(((Street) other).value)); // state check
+                || (other instanceof Unit // instanceof handles nulls
+                && this.value.equals(((Unit) other).value)); // state check
     }
 
     @Override

@@ -1,9 +1,7 @@
 package seedu.addressbook.data.person;
 
-import seedu.addressbook.data.exception.IllegalValueException;
-
 /**
- * Represents a Person's Street in the address book.
+ * Represents a Person's Unit in the address book.
  */
 public class Street {
 
@@ -12,7 +10,7 @@ public class Street {
     public final String value;
     private boolean isPrivate;
 
-    public Street(String street, boolean isPrivate) throws IllegalValueException {
+    public Street(String street, boolean isPrivate){
         this.isPrivate = isPrivate;
         this.value = street.trim();
     }
@@ -25,8 +23,8 @@ public class Street {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Street // instanceof handles nulls
-                && this.value.equals(((Street) other).value)); // state check
+                || (other instanceof Unit // instanceof handles nulls
+                && this.value.equals(((Unit) other).value)); // state check
     }
 
     @Override
