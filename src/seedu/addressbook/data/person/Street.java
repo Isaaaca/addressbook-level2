@@ -1,7 +1,7 @@
 package seedu.addressbook.data.person;
 
 /**
- * Represents a Person's Unit in the address book.
+ * Represents a Person's Street in the address book.
  */
 public class Street {
 
@@ -23,8 +23,8 @@ public class Street {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Unit // instanceof handles nulls
-                && this.value.equals(((Unit) other).value)); // state check
+                || (other instanceof Street // instanceof handles nulls
+                && this.value.equals(((Street) other).value)); // state check
     }
 
     @Override
