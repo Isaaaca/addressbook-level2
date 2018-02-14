@@ -59,7 +59,8 @@ public class ShowCommand extends Command {
         }
         for (ReadOnlyPerson person : addressBook.getAllPersons()) {
             for (Tag tag: keyTags){
-                if (person.getTags().contains(tag)) {
+                if (person.getTags().contains(tag)
+                        && !matchedPersons.contains(person)) {
                     matchedPersons.add(person);
                 }
             }
