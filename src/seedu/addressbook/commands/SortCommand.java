@@ -7,14 +7,14 @@ import java.util.List;
 
 
 /**
- * Lists all persons in the address book to the user.
+ * Lists all persons in the address book to the user ordered by name.
  */
 public class SortCommand extends Command {
 
     public static final String COMMAND_WORD = "sort";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Sorts all persons in the address book by name.\n"
+            + ": Lists all persons in the address book sorted by name.\n"
             + "Example: " + COMMAND_WORD;
 
 
