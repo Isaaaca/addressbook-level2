@@ -94,6 +94,27 @@
   viewall 5
 
 ##########################################################
+# test show persons command
+##########################################################
+
+  # should consider no keywords as invalid command format
+  show
+  # should only match full words in tags
+  show tub
+  # does not match if none have keyword
+  show 23912039120
+  # matching should be case-sensitive
+  show School
+
+  # find unique keyword
+  show secretive
+  # find multiple with same keyword
+  show school
+  # find multiple with some keywords
+  show tubers friends
+
+
+##########################################################
 # test find persons command
 ##########################################################
 
