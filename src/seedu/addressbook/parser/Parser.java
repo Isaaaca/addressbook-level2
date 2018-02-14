@@ -92,6 +92,9 @@ public class Parser {
         case SortCommand.COMMAND_WORD:
             return new SortCommand();
 
+        case ShowCommand.COMMAND_WORD:
+            return prepareFind(arguments);
+
         case HelpCommand.COMMAND_WORD: // Fallthrough
         default:
             return new HelpCommand();
