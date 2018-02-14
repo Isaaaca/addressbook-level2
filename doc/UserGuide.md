@@ -53,7 +53,7 @@ Examples:
 Shows a list of all persons in the address book.<br>
 Format: `list`
 
-### Listing all persons : `sort`
+### Sortting all persons : `sort`
 Shows a list of all persons in the address book sorted by name. Does not reorder the addressbook.<br>
 Format: `sort`
 
