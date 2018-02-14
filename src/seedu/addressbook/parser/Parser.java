@@ -93,7 +93,7 @@ public class Parser {
             return new SortCommand();
 
         case ShowCommand.COMMAND_WORD:
-            return prepareFind(arguments);
+            return prepareShow(arguments);
 
         case HelpCommand.COMMAND_WORD: // Fallthrough
         default:
@@ -244,6 +244,25 @@ public class Parser {
         final String[] keywords = matcher.group("keywords").split("\\s+");
         final Set<String> keywordSet = new HashSet<>(Arrays.asList(keywords));
         return new FindCommand(keywordSet);
+    }
+
+/**
+     * Parses arguments in the context of the show person command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
+    private Command prepareShow(String args) {
+        final Matcher matcher = KEYWORDS_ARGS_FORMAT.matcher(args.trim());
+        if (!matcher.matches()) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    ShowCommand.MESSAGE_USAGE));
+        }
+
+        // keywords delimited by whitespace
+        final String[] keywords = matcher.group("keywords").split("\\s+");
+        final Set<String> keywordSet = new HashSet<>(Arrays.asList(keywords));
+        return new ShowCommand(keywordSet);
     }
 
 
