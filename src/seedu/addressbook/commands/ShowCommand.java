@@ -20,7 +20,7 @@ public class ShowCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons with tags of"
             + "the specified keyword (case-sensitive) and displays them as a list with index numbers.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " alice bob charlie";
+            + "Example: " + COMMAND_WORD + " alpha beta fun";
 
     private final Set<String> keywords;
 
